@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -128,12 +130,41 @@
             <h2 class="footer-logo">HİZ.</h2>
             <p>Birlikte çalışmak veya sadece merhaba demek için bana ulaşın.</p>
             <div class="social-links">
-                <a href="https://www.instagram.com/h.zaloglu/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://wa.me/905314257965" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a href="https://www.instagram.com/h.zaloglu/" target="_blank" rel="noopener noreferrer"
+                    class="social-icon" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/905314257965" target="_blank" rel="noopener noreferrer" class="social-icon"
+                    aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
             <p class="copyright">&copy; 2026 Halil İbrahim Zal. Tüm hakları saklıdır.</p>
         </div>
     </footer>
+
+    <!-- AI Assistant UI -->
+    <div id="ai-chat-widget">
+        <button id="ai-chat-btn" class="ai-button" aria-label="Aç/Kapat Yapay Zeka Asistanı">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div id="ai-chat-box" class="ai-chat-panel hidden">
+            <div class="ai-header">
+                <h3>Halil İbrahim AI</h3>
+                <button id="ai-close-btn" aria-label="Kapat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="ai-messages" id="ai-messages">
+                <div class="ai-msg bot-msg">
+                    Merhaba! Ben Halil İbrahim'in dijital asistanıyım. Çekimler, fiyatlar veya portfolyo hakkında sormak
+                    istediğiniz bir şey var mı?
+                </div>
+            </div>
+            <div class="ai-input-area">
+                <input type="text" id="ai-input" placeholder="Bir şeyler yazın..." />
+                <button id="ai-send-btn" aria-label="Gönder"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
