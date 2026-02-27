@@ -34,6 +34,46 @@ body {
     color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
+    cursor: none;
+    /* Hide default cursor */
+}
+
+/* Custom Cursor */
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-color);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--accent-color);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Hide on smaller screens to avoid touch issues */
+@media (max-width: 768px) {
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
 }
 
 /* Typography */
@@ -138,10 +178,24 @@ a {
     justify-content: center;
     text-align: center;
     position: relative;
-    /* Using one of the images as a dark tinted background could work, 
-       but for a cleaner look we'll use a dynamic gradient */
-    background: linear-gradient(135deg, #1f1c18 0%, #000000 100%);
+    background: linear-gradient(-45deg, #0f0f11, #1f1c18, #111, #0a0a0c);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Subtle particle or glow effect could be added here */
@@ -152,13 +206,13 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .hero-content {
     z-index: 2;
     padding: 2rem;
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeIn 2s ease-out;
 }
 
 .hero-title {
@@ -166,8 +220,28 @@ a {
     font-weight: 700;
     margin-bottom: 0.5rem;
     background: linear-gradient(to right, #fff, var(--text-muted));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    color: var(--accent-color);
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .hero-subtitle {
@@ -189,6 +263,7 @@ a {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    transition: var(--transition-smooth);
 }
 
 .cta-button::before {
@@ -203,8 +278,9 @@ a {
     transition: var(--transition-smooth);
 }
 
-.cta-button:hover {
+.cta-button.glow-btn:hover {
     color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(212, 175, 55, 0.1);
 }
 
 .cta-button:hover::before {
@@ -616,7 +692,7 @@ footer {
     }
 }
 
-/* Animations */
+/* Animations & Scroll Reveal */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -627,6 +703,30 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.fade-left {
+    transform: translateX(-50px);
+}
+
+.reveal.fade-right {
+    transform: translateX(50px);
+}
+
+.reveal.fade-left.active,
+.reveal.fade-right.active {
+    transform: translateX(0);
 }
 
 /* Responsive Design */

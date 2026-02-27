@@ -17,6 +17,10 @@
 </head>
 
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
@@ -39,46 +43,46 @@
     <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Anı Yakala.</h1>
-            <p class="hero-subtitle">Halil İbrahim Zal - Portre ve Sokak Fotoğrafçısı</p>
-            <a href="#portfolio" class="cta-button">Çalışmalarımı Gör</a>
+            <h1 class="hero-title"><span id="typewriter"></span><span class="cursor">|</span></h1>
+            <p class="hero-subtitle reveal fade-up">Halil İbrahim Zal - Portre ve Sokak Fotoğrafçısı</p>
+            <a href="#portfolio" class="cta-button reveal fade-up glow-btn">Çalışmalarımı Gör</a>
         </div>
     </header>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
-        <div class="section-header">
+        <div class="section-header reveal fade-up">
             <h2 class="section-title">Portfolyo</h2>
             <div class="divider"></div>
         </div>
 
         <div class="gallery-grid">
             <!-- Images will be rendered here -->
-            <div class="gallery-item">
+            <div class="gallery-item reveal fade-left">
                 <img src="images/media__1772222399368.jpg" alt="Portfolio Image 1" loading="lazy">
                 <div class="overlay">
                     <span class="view-text">İncele</span>
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item reveal fade-right">
                 <img src="images/media__1772222461580.jpg" alt="Portfolio Image 2" loading="lazy">
                 <div class="overlay">
                     <span class="view-text">İncele</span>
                 </div>
             </div>
-            <div class="gallery-item grid-span-2">
+            <div class="gallery-item grid-span-2 reveal fade-up">
                 <img src="images/media__1772222471627.jpg" alt="Portfolio Image 3" loading="lazy">
                 <div class="overlay">
                     <span class="view-text">İncele</span>
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item reveal fade-left">
                 <img src="images/media__1772222483991.jpg" alt="Portfolio Image 4" loading="lazy">
                 <div class="overlay">
                     <span class="view-text">İncele</span>
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item reveal fade-right">
                 <img src="images/media__1772222499001.jpg" alt="Portfolio Image 5" loading="lazy">
                 <div class="overlay">
                     <span class="view-text">İncele</span>
@@ -95,12 +99,12 @@
 
     <!-- Video Section -->
     <section id="video" class="video-section">
-        <div class="section-header">
+        <div class="section-header reveal fade-up">
             <h2 class="section-title">Video Çalışmaları</h2>
             <div class="divider"></div>
         </div>
 
-        <div class="video-wrapper">
+        <div class="video-wrapper reveal fade-up">
             <!-- Videonuzu 'sizin-videonuz.mp4' adıyla aynı klasöre koyun veya ismini güncelleyin -->
             <video class="custom-video" controls poster="images/media__1772222399368.jpg">
                 <source src="halilibrahimzalvideo.mp4" type="video/mp4">
@@ -111,7 +115,7 @@
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="about-container">
+        <div class="about-container reveal fade-up">
             <div class="about-text">
                 <h2 class="section-title">Hakkımda</h2>
                 <div class="divider"></div>
