@@ -347,6 +347,51 @@ section {
     color: var(--text-light);
 }
 
+/* Video Section */
+.video-section {
+    background-color: var(--primary-color);
+}
+
+.video-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background-color: #000;
+}
+
+.custom-video {
+    width: 100%;
+    display: block;
+    outline: none;
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
 /* About Section */
 .about {
     background-color: var(--secondary-color);
